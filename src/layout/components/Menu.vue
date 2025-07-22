@@ -4,9 +4,9 @@
     v-model:selectedKeys="keys.selectedKeys"
     @click="checkRoute"
   >
-    <a-menu-item key="Home">竞赛管理</a-menu-item>
-    <a-menu-item key="Create">创建比赛</a-menu-item>
-    <a-menu-item key="Staff">人员管理</a-menu-item>
+    <a-menu-item key="competition">竞赛管理</a-menu-item>
+    <a-menu-item key="team">分组管理</a-menu-item>
+    <a-menu-item key="game">对局管理</a-menu-item>
   </a-menu>
 </template>
 

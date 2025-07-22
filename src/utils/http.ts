@@ -6,8 +6,9 @@ import axios, {
 } from 'axios'
 import { message } from 'ant-design-vue'
 
-const TEST_URL = 'http://localhost:3008'
-const PROD_URL = 'https://www.youngcr.cn/capi'
+const TEST_URL = 'http://192.1.161.242:8080'
+// const TEST_URL = 'http://localhost:3008'
+// const PROD_URL = 'https://www.youngcr.cn/capi'
 
 class IAxios {
   private instance: AxiosInstance
@@ -33,14 +34,20 @@ class IAxios {
     this.instance.interceptors.request.use((config: AxiosRequestConfig) => {
       return config
     })
-
-    this.instance.interceptors.response.use((response: AxiosResponse) => {
-      return {
-        ...response.data,
-        status: response.status,
-        statusText: response.statusText,
+    this.instance.interceptors.response.use(
+      (response: AxiosResponse) => {
+        return response.data // 保留业务返回结构，不做覆盖
+      },
+      (error: AxiosError) => {
+        // 捕获 HTTP 层错误（比如 404、500），返回 error.response.data
+        if (error.response) {
+          return Promise.reject(error.response.data)
+        } else {
+          return Promise.reject(error)
+        }
       }
-    })
+    )
+
   }
 
   public request(config: AxiosRequestConfig) {

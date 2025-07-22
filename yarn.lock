@@ -22,6 +22,14 @@
     "@ant-design/colors" "^6.0.0"
     "@ant-design/icons-svg" "^4.2.1"
 
+"@ant-design/icons-vue@^7.0.1":
+  "integrity" "sha512-eCqY2unfZK6Fe02AwFlDHLfoyEFreP6rBwAZMIJ1LugmfMiVgwWDYlp1YsRugaPtICYOabV1iWxXdP12u9U43Q=="
+  "resolved" "https://registry.npmmirror.com/@ant-design/icons-vue/-/icons-vue-7.0.1.tgz"
+  "version" "7.0.1"
+  dependencies:
+    "@ant-design/colors" "^6.0.0"
+    "@ant-design/icons-svg" "^4.2.1"
+
 "@babel/parser@^7.16.4":
   "integrity" "sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg=="
   "resolved" "https://registry.npmmirror.com/@babel/parser/-/parser-7.17.9.tgz"
@@ -222,9 +230,9 @@
   "version" "7.4.1"
 
 "ant-design-vue@^3.2.2":
-  "integrity" "sha512-PD9fgioIo+0PtSq8E6BePQ0eho83MsAlHURMePo6IFOPpdv0EE7AFeotOK/rUp1FOyb1fZc5tuJGL3MsJmfn1g=="
-  "resolved" "https://registry.npmmirror.com/ant-design-vue/-/ant-design-vue-3.2.2.tgz"
-  "version" "3.2.2"
+  "integrity" "sha512-YWpMfGaGoRastIXEYfCoJiaRiDHk4chqtYhlKQM5GqPt6NfvrM1Vg2e60yHtjxlZjed91wCMm0rAmyUr7Hwzdg=="
+  "resolved" "https://registry.npmmirror.com/ant-design-vue/-/ant-design-vue-3.2.20.tgz"
+  "version" "3.2.20"
   dependencies:
     "@ant-design/colors" "^6.0.0"
     "@ant-design/icons-vue" "^6.1.0"

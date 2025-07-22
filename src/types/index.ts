@@ -7,31 +7,112 @@ interface IResponse<T> {
   status_text: string
 }
 
+//赛事信息列表
+interface ICompetitionRecord {
+  // 唯一索引
+  id: number
+  // 竞赛名
+  name: string
+  // 开始日期
+  startDate: any
+  // 结束日期
+  endDate: any
+  // 轮次数
+  roundCount: number
+  // 每轮时长
+  roundMin: number
+  // 桌数
+  tableCount: number
+  // 规则
+  rule: string
+  // 创建时间
+  createTime: string
+}
+
+//奖项
+interface awardInfo {
+  //唯一索引(编辑时使用)
+  _id: string
+  // 赛事id
+  compId: number
+  // 奖品等级
+  awardLevel: number
+  // 等级名称
+  levelName: string
+  // 奖品数量
+  memCount: number
+  // 奖品内容
+  content: string
+}
+
+// 分组管理
+interface teamInfo {
+  //唯一索引
+  id: number
+  // 赛事id
+  compId: number
+  // 赛事名称
+  compName: string
+  //队员1
+  mem1Name: string
+  mem1Age: number
+  mem1Sex: string
+  //队员2
+  mem2Name: string
+  mem2Age: number
+  mem2Sex: string
+  //队伍名称
+  teamName: string
+}
+
+// 对局管理
+interface gameInfo {
+  //唯一索引
+  id: number
+  // 赛事id
+  compId: number
+  // 当前轮次
+  currentRound: number
+  //蓝方队伍id
+  leftTeamId: number
+  //红方队伍id
+  rightTeamId: number
+  //桌号
+  tableNo: number
+  //对局状态
+  status: number
+  //蓝方队伍名称
+  leftTeamName: string
+  //红方队伍名称
+  rightTeamName: string
+}
+
+// 参赛者信息
 interface IUserInfo {
   // 记录唯一索引
-  _id: string,
+  _id: string
   // 性别(0 男 1女)
-  gender: number,
+  gender: number
   // 账号(后台)
-  username: string,
+  username: string
   // 密码(后台)
-  password: string,
+  password: string
   // 个性说明
-  sign: string,
+  sign: string
   // 微信用户唯一标识，若没有则为后台用户
-  openid: string,
+  openid: string
   // 学校
-  university: string,
+  university: string
   // 昵称
-  nick_name: string,
+  nick_name: string
   // 学号/工号
-  uid: string,
+  uid: string
   // 用户头像地址
-  avatar_url: string,
+  avatar_url: string
   // 学校下属组织
-  organization: string,
+  organization: string
   // 联系电话
-  phone_number: string,
+  phone_number: string
   // 真实姓名
   name: string
 }
@@ -97,50 +178,7 @@ interface ICreateCompetition {
   cover: UploadProps['fileList']
   score_chart: ScoreChart[]
   code: string
-  award: IAwardItem[],
-  creator_id: string
-}
-
-interface ICompetitionRecord {
-  // 唯一索引
-  _id: string
-  // 竞赛名
-  name: string
-  // 竞赛等级(校内/开放)
-  level: number
-  // 开始日期
-  start_date: string
-  // 结束日期
-  end_date: string
-  // 是否为作品赛
-  has_work: boolean
-  // 作品类型
-  work_type: number
-  // 竞赛简介
-  introduction: string
-  // 竞赛标签
-  tag: string[]
-  // 主办方
-  host: string
-  // 协办方
-  assist: string[]
-  // 赛程数(阶段数)
-  stage_count: number
-  // 赛程安排
-  schedule: IScheduleItem[]
-  // 封面
-  cover: string
-  // 参赛码
-  code: string
-  // 评分表
-  score_chart: IScoreItem[]
-  // 奖项
   award: IAwardItem[]
-  // 评委
-  judge: IUserInfo[]
-  // 督查
-  director: IUserInfo[]
-  // 创建者id
   creator_id: string
 }
 
@@ -194,15 +232,19 @@ interface ISignRecord {
 }
 
 export type {
+  ICompetitionRecord,
+  awardInfo,
+  teamInfo,
+  gameInfo,
+
   IUserInfo,
   IScoreItem,
   IAwardItem,
   IScheduleItem,
   ICreateCompetition,
-  ICompetitionRecord,
   ILoginForm,
   IRegisterForm,
   IResponse,
   IUserRecord,
-  ISignRecord
+  ISignRecord,
 }

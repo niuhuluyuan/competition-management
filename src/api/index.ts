@@ -1,16 +1,16 @@
 import LoginRequestClass from './login'
 import CreateRquestClass from './create'
 import HomeRequestClass from './home'
-import DetailRequestClass from './detail'
+import gameRequestClass from './game'
 
 const LoginRequest = new LoginRequestClass()
 const CreateRequest = new CreateRquestClass()
 const HomeRequest = new HomeRequestClass()
-const DetailRequest = new DetailRequestClass()
+const gameRequest = new gameRequestClass()
 
 export {
   LoginRequest,
   CreateRequest,
   HomeRequest,
-  DetailRequest
+  gameRequest
 }
